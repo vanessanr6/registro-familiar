@@ -3,16 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NacimientoComponent } from './nacimiento/nacimiento.component';
+import { NacimientoService } from './servicio/nacimiento.service';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NacimientoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [NacimientoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
