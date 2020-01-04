@@ -7,12 +7,14 @@ import { NacimientoComponent } from './nacimiento/nacimiento.component';
 import { NacimientoService } from './servicio/nacimiento.service';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    NacimientoComponent
+    NacimientoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
