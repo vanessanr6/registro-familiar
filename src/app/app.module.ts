@@ -10,7 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { NacimientoPostComponent } from './nacimiento-post/nacimiento-post.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', component: BodyComponent },
+  { path: 'nacimiento', component: NacimientoComponent },
+  { path: 'nacimientopost', component: NacimientoPostComponent }
+];
+
 
 @NgModule({
   declarations: [
@@ -18,13 +27,15 @@ import { FooterComponent } from './footer/footer.component'
     NacimientoComponent,
     HeaderComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    NacimientoPostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [NacimientoService],
   bootstrap: [AppComponent]
