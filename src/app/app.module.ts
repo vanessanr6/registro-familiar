@@ -1,5 +1,13 @@
+import { LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+
+//Importar Locales
+import localeSv from '@angular/common/locales/es-SV';
+
+  // registrar los locales con el nombre que quieras utilizar a la hora de proveer
+registerLocaleData(localeSv, 'es');
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +21,7 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { NacimientoPostComponent } from '../app/nacimiento/nacimiento-post/nacimiento-post.component';
 import { Routes, RouterModule } from '@angular/router';
+;
 
 const routes: Routes = [
   { path: '', component: BodyComponent },
@@ -37,7 +46,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [NacimientoService],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }, NacimientoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

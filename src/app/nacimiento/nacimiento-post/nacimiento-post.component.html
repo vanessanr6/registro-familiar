@@ -34,9 +34,9 @@
             <label for="controlNombre">Sexo</label>
             <select [(ngModel)]="agregarNacimientoRegistro.sexo" class="form-control" required>
                 <option value="" disabled selected="true">Seleccione una de las opciones</option>
-                <option value="M">Masculino</option> 
+                <option value="M">Masculino</option>
                 <option value="F" selected>Femenino</option>
-              </select>
+            </select>
         </div>
     </div>
     <div class="col-md-4 col-sm-10">
@@ -67,30 +67,13 @@
                 placeholder="Hora de Nacimiento" step="2" required>
         </div>
     </div>
-    <div class="col-md-4 col-sm-10">
-        <div class="form-group">
-            <label for="controlNombre">Nombre Completo de La Madre</label>
-            <input type="text" [(ngModel)]="agregarNacimientoRegistro.madre" class="form-control"
-                placeholder="Nombre Completo de la Madre" required>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-10">
-        <div class="form-group">
-            <label for="controlNombre">Nombre Completo del Padre</label>
-            <input type="text" [(ngModel)]="agregarNacimientoRegistro.padre" class="form-control"
-                placeholder="Nombre Completo del Padre">
-        </div>
-    </div>
-</div>
-
-<div class="text-right">
-    <button (click)="agregarNacimiento()" class="btn btn-primary">Agregar Nacimiento</button>
 </div>
 <br>
-<br>
-<br>
-
+<hr>
 <div class="row">
+    <div class="col-md-12 col-sm-12 text-center">
+        <h4>Buscar Madre del Inscrito</h4>
+    </div>
     <div class="col-md-4 col-sm-10">
         <div class="form-group">
             <label for="controlNombre">Primer Nombre</label>
@@ -119,8 +102,73 @@
                 placeholder="Segundo Apellido" required>
         </div>
     </div>
+
+    <div class="col-md-12 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Seleccione a la Persona</label>
+            <select type="text" [(ngModel)]="agregarNacimientoRegistro.id_madre" class="form-control">
+                <option [value]="item.id" *ngFor="let item of resultadoMadre">{{item.primer_nombre}}
+                    {{item.segundo_nombre}} {{item.primer_apellido}} {{item.segundo_apellido}} -- {{item.fecha_nacimiento}}</option>
+            </select>
+        </div>
+    </div>
 </div>
 
 <div class="text-center">
-    <button (click)="buscarNacimientoNombres()" class="btn btn-primary">Buscar Nacimiento</button>
+    <button (click)="buscarPersonaMadre()" class="btn btn-primary">Buscar Persona</button>
+</div>
+<br>
+<hr>
+<!-- ******************Busqueda del Padre************************* -->
+<div class="row">
+    <div class="col-md-12 col-sm-12 text-center">
+        <h4>Buscar Padre del Inscrito</h4>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Primer Nombre</label>
+            <input type="text" [(ngModel)]="datosBusquedaPadre.primer_nombre" class="form-control "
+                placeholder="Primer nombre" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Segundo Nombre</label>
+            <input type="text" [(ngModel)]="datosBusquedaPadre.segundo_nombre" class="form-control"
+                placeholder="Segundo nombre" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Primer Apellido</label>
+            <input type="text" [(ngModel)]="datosBusquedaPadre.primer_apellido" class="form-control"
+                placeholder="Primer Apellido" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Segundo Apellido</label>
+            <input type="text" [(ngModel)]="datosBusquedaPadre.segundo_apellido" class="form-control"
+                placeholder="Segundo Apellido" required>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Seleccione a la Persona</label>
+            <select type="text" [(ngModel)]="agregarNacimientoRegistro.id_padre" class="form-control">
+                <option [value]="item.id" *ngFor="let item of resultadoPadre">{{item.primer_nombre}}
+                    {{item.segundo_nombre}} {{item.primer_apellido}} {{item.segundo_apellido}} -- {{item.fecha_nacimiento}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <button (click)="buscarPersonaPadre()" class="btn btn-primary">Buscar Persona</button>
+</div>
+
+<!--***************** Boton Para guardar Nacimientos  ***************-->
+<div class="text-right">
+    <button (click)="agregarNacimiento()" class="btn btn-primary">Agregar Nacimiento</button>
 </div>

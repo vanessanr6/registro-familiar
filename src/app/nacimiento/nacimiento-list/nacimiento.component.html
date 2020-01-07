@@ -1,16 +1,33 @@
+<div class="text-center">
+    <h1>Lista de Registro de Nacimientos</h1>
+</div>
+<br>
 
 <div class="container">
+    <div class="row">
+        <div class="col-12"><h1>Busqueda de Registro de Nacimiento</h1></div>
+        
+    </div>
     <div class="row text-center">
+
         <div class="col-12">
            <table class="table table-striped">
                <thead>
                     <th>Primero Nombre</th>
+                    <th>Segundo Nombre</th>
+                    <th>Primero Apellido</th>
+                    <th>Segundo Apellido</th>
+                    <th>Fecha de Nacimiento</th>
                     <th>Acciones</th>
                </thead>
                <tbody>
                     <tr *ngFor="let item of nacimientos">
                         <td>{{ item.primer_nombre }}</td>
-                        <td><button (click)="eliminaNacimiento(item.id)" class="btn btn-primary">Eliminar</button></td>
+                        <td>{{ item.segundo_nombre }}</td>
+                        <td>{{ item.primer_apellido }}</td>
+                        <td>{{ item.segundo_apellido }}</td>
+                        <td>{{ item.fecha_nacimiento | date:'fullDate'}}</td>
+                        <td><button (click)="eliminaNacimiento(item.id)" class="btn btn-primary">Ver formato Digital</button></td>
                     </tr>
                </tbody>
            </table>
