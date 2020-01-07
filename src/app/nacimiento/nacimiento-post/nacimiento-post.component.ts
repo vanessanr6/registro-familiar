@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NacimientoService } from '../servicio/nacimiento.service';
+import { NacimientoService } from '../../servicio/nacimiento.service';
 @Component({
   selector: 'app-nacimiento-post',
   templateUrl: './nacimiento-post.component.html',
