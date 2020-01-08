@@ -1,0 +1,126 @@
+<h1 class="text-center">Registro de Nacimiento</h1>
+<br>
+<!-- <div class="row">
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Primer Nombre</label>
+            <input type="text" [(ngModel)]="agregarNacimientoRegistro.primer_nombre" class="form-control "
+                placeholder="Primer nombre" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Segundo Nombre</label>
+            <input type="text" [(ngModel)]="agregarNacimientoRegistro.segundo_nombre" class="form-control"
+                placeholder="Segundo nombre" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Primer Apellido</label>
+            <input type="text" [(ngModel)]="agregarNacimientoRegistro.primer_apellido" class="form-control"
+                placeholder="Primer Apellido" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Segundo Apellido</label>
+            <input type="text" [(ngModel)]="agregarNacimientoRegistro.segundo_apellido" class="form-control"
+                placeholder="Segundo Apellido" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Sexo</label>
+            <select [(ngModel)]="agregarNacimientoRegistro.sexo" class="form-control" required>
+                <option value="" disabled selected="true">Seleccione una de las opciones</option>
+                <option value="M">Masculino</option> 
+                <option value="F" selected>Femenino</option>
+              </select>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Lugar de Nacimiento</label>
+            <input type="text" [(ngModel)]="agregarNacimientoRegistro.lugar_nacimiento" class="form-control"
+                placeholder="Lugar de Nacimiento" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Hospital de Nacimiento</label>
+            <input type="text" [(ngModel)]="agregarNacimientoRegistro.hospital" class="form-control"
+                placeholder="Hospital de Nacimiento" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Fecha de Nacimiento</label>
+            <input type="Date" [(ngModel)]="agregarNacimientoRegistro.fecha_nacimiento" class="form-control"
+                placeholder="Fecha de Nacimiento" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Hora de Nacimiento</label>
+            <input type="time" [(ngModel)]="agregarNacimientoRegistro.hora" class="form-control"
+                placeholder="Hora de Nacimiento" step="2" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Nombre Completo de La Madre</label>
+            <input type="text" [(ngModel)]="agregarNacimientoRegistro.madre" class="form-control"
+                placeholder="Nombre Completo de la Madre" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Nombre Completo del Padre</label>
+            <input type="text" [(ngModel)]="agregarNacimientoRegistro.padre" class="form-control"
+                placeholder="Nombre Completo del Padre">
+        </div>
+    </div>
+</div>
+
+<div class="text-right">
+    <button (click)="agregarNacimiento()" class="btn btn-primary">Agregar Nacimiento</button>
+</div> -->
+<br>
+<br>
+<br>
+
+<div class="row">
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Primer Nombre</label>
+            <input type="text" [(ngModel)]="datosBusqueda.primer_nombre" class="form-control "
+                placeholder="Primer nombre" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Segundo Nombre</label>
+            <input type="text" [(ngModel)]="datosBusqueda.segundo_nombre" class="form-control"
+                placeholder="Segundo nombre" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Primer Apellido</label>
+            <input type="text" [(ngModel)]="datosBusqueda.primer_apellido" class="form-control"
+                placeholder="Primer Apellido" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Segundo Apellido</label>
+            <input type="text" [(ngModel)]="datosBusqueda.segundo_apellido" class="form-control"
+                placeholder="Segundo Apellido" required>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <button (click)="buscarPersonaPorNombre()" class="btn btn-primary">Buscar Persona</button>
+</div>

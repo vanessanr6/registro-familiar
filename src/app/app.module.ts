@@ -14,6 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 import { NacimientoPostComponent } from './nacimiento-post/nacimiento-post.component';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AdopcionComponent } from './adopcion/adopcion.component';
+import { AdopcionService } from './servicio/adopcion.service';
+
 const routes: Routes = [
   { path: '', component: BodyComponent },
   { path: 'nacimiento', component: NacimientoComponent },
@@ -28,7 +31,8 @@ const routes: Routes = [
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    NacimientoPostComponent
+    NacimientoPostComponent,
+    AdopcionComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [NacimientoService],
+  providers: [NacimientoService,
+    AdopcionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
