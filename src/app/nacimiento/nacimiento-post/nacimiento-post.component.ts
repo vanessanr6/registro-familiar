@@ -8,7 +8,7 @@ import { NacimientoService } from '../../servicio/nacimiento.service';
 export class NacimientoPostComponent implements OnInit {
   resultadoMadre: any;
   resultadoPadre: any;
-  agregarNacimientoRegistro : any = { primer_nombre: '', segundo_nombre: '', primer_apellido: '', segundo_apellido: '', sexo: '', hospital: '', lugar_nacimiento: '' , hora: '', fecha_nacimiento: '', id_madre: '', id_padre: ''}
+  agregarNacimientoRegistro : any = { primer_nombre: '', segundo_nombre: '', primer_apellido: '', segundo_apellido: '', sexo: '', hospital: '', lugar_nacimiento: '' , hora: '', fecha_nacimiento: '', madre: '', padre: '', libro: '', folio: ''}
   datosBusqueda: any = { primer_nombre: '', segundo_nombre: '', primer_apellido: '', segundo_apellido: '' };
   datosBusquedaPadre: any = { primer_nombre: '', segundo_nombre: '', primer_apellido: '', segundo_apellido: '' };
   constructor(private NacimientoService: NacimientoService) { }
@@ -19,9 +19,11 @@ export class NacimientoPostComponent implements OnInit {
   agregarNacimiento(){
     console.log("Evento guardar");
     this.NacimientoService.agregarNacimiento(this.agregarNacimientoRegistro).subscribe( resultado => {
+      console.log('correcto;');
+      location.href = '/nacimiento';
     },
     error => {
-      console.log(error);
+      alert('No se pudo agregar el registro');
     })
   }
 

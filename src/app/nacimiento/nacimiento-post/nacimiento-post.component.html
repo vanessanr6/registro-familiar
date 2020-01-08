@@ -34,8 +34,8 @@
             <label for="controlNombre">Sexo</label>
             <select [(ngModel)]="agregarNacimientoRegistro.sexo" class="form-control" required>
                 <option value="" disabled selected="true">Seleccione una de las opciones</option>
-                <option value="M">Masculino</option>
-                <option value="F" selected>Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino" selected>Femenino</option>
             </select>
         </div>
     </div>
@@ -65,6 +65,20 @@
             <label for="controlNombre">Hora de Nacimiento</label>
             <input type="time" [(ngModel)]="agregarNacimientoRegistro.hora" class="form-control"
                 placeholder="Hora de Nacimiento" step="2" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Libro</label>
+            <input type="number" [(ngModel)]="agregarNacimientoRegistro.libro" class="form-control"
+                placeholder="Digite numero de Libro" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Folio</label>
+            <input type="number" [(ngModel)]="agregarNacimientoRegistro.folio" class="form-control"
+                placeholder="Digite Numero de Folio" required>
         </div>
     </div>
 </div>
@@ -106,8 +120,8 @@
     <div class="col-md-12 col-sm-10">
         <div class="form-group">
             <label for="controlNombre">Seleccione a la Persona</label>
-            <select type="text" [(ngModel)]="agregarNacimientoRegistro.id_madre" class="form-control">
-                <option [value]="item.id" *ngFor="let item of resultadoMadre">{{item.primer_nombre}}
+            <select type="text" [(ngModel)]="agregarNacimientoRegistro.madre" class="form-control">
+                <option [value]="item.primer_nombre + ' ' + item.segundo_nombre + ' ' + item.primer_apellido + ' ' + item.segundo_apellido" *ngFor="let item of resultadoMadre">{{item.primer_nombre}}
                     {{item.segundo_nombre}} {{item.primer_apellido}} {{item.segundo_apellido}} -- {{item.fecha_nacimiento}}</option>
             </select>
         </div>
@@ -156,8 +170,8 @@
     <div class="col-md-12 col-sm-10">
         <div class="form-group">
             <label for="controlNombre">Seleccione a la Persona</label>
-            <select type="text" [(ngModel)]="agregarNacimientoRegistro.id_padre" class="form-control">
-                <option [value]="item.id" *ngFor="let item of resultadoPadre">{{item.primer_nombre}}
+            <select type="text" [(ngModel)]="agregarNacimientoRegistro.padre" class="form-control">
+                <option [value]="item.primer_nombre + ' ' + item.segundo_nombre + ' ' + item.primer_apellido + ' ' + item.segundo_apellido" *ngFor="let item of resultadoPadre">{{item.primer_nombre}}
                     {{item.segundo_nombre}} {{item.primer_apellido}} {{item.segundo_apellido}} -- {{item.fecha_nacimiento}}</option>
             </select>
         </div>
