@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { NacimientoService } from '../servicio/nacimiento.service';
+import { NacimientoService } from '../../servicio/nacimiento.service';
 @Component({
   selector: 'app-nacimiento-post',
   templateUrl: './nacimiento-post.component.html',
   styleUrls: ['./nacimiento-post.component.css']
 })
 export class NacimientoPostComponent implements OnInit {
-  nacimientos: any;
-  agregarNacimientoRegistro : any = { primer_nombre: '', segundo_nombre: '', primer_apellido: '', segundo_apellido: '', sexo: '', hospital: '', lugar_nacimiento: '' , hora: '', fecha_nacimiento: '', madre: '', padre: ''}
+  resultadoMadre: any;
+  resultadoPadre: any;
+  agregarNacimientoRegistro : any = { primer_nombre: '', segundo_nombre: '', primer_apellido: '', segundo_apellido: '', sexo: '', hospital: '', lugar_nacimiento: '' , hora: '', fecha_nacimiento: '', id_madre: '', id_padre: ''}
   datosBusqueda: any = { primer_nombre: '', segundo_nombre: '', primer_apellido: '', segundo_apellido: '' };
+  datosBusquedaPadre: any = { primer_nombre: '', segundo_nombre: '', primer_apellido: '', segundo_apellido: '' };
   constructor(private NacimientoService: NacimientoService) { }
 
   ngOnInit() {
@@ -23,11 +25,22 @@ export class NacimientoPostComponent implements OnInit {
     })
   }
 
-  buscarNacimientoNombres(){
+  buscarPersonaMadre(){
     console.log("Evento guardar");
     this.NacimientoService.obtenerNacimientoNombres(this.datosBusqueda).subscribe( resultado => {
-      this.nacimientos = resultado;
-      console.log(this.nacimientos);
+      this.resultadoMadre = resultado;
+      console.log(this.resultadoMadre);
+    },
+    error => {
+      console.log(error);
+    })
+  }
+
+  buscarPersonaPadre(){
+    console.log("Evento guardar");
+    this.NacimientoService.obtenerNacimientoNombres(this.datosBusquedaPadre).subscribe( resultado => {
+      this.resultadoPadre = resultado;
+      console.log(this.resultadoPadre);
     },
     error => {
       console.log(error);
