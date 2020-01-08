@@ -23,6 +23,9 @@ import { NacimientoPostComponent } from '../app/nacimiento/nacimiento-post/nacim
 import { Routes, RouterModule } from '@angular/router';
 ;
 
+import { AdopcionComponent } from './adopcion/adopcion.component';
+import { AdopcionService } from './servicio/adopcion.service';
+
 const routes: Routes = [
   { path: '', component: BodyComponent },
   { path: 'nacimiento', component: NacimientoComponent },
@@ -37,7 +40,8 @@ const routes: Routes = [
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    NacimientoPostComponent
+    NacimientoPostComponent,
+    AdopcionComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
+
   providers: [{ provide: LOCALE_ID, useValue: 'es' }, NacimientoService],
   bootstrap: [AppComponent]
 })
