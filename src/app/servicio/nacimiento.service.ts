@@ -32,6 +32,15 @@ export class NacimientoService {
     return this.httpClient.delete("/nacimientos/" + identificador);
   }
 
+  obtenerPersona(nombre1, nombre2, apellido1, apellido2):Observable<any>{
+    return this.httpClient.get("/nacimientos/buscarNombres/"+ nombre1 + "/" + nombre2 +"/" + apellido1 + "/" + apellido2);
+  }
+
+  actualizarPersona(persona: any , id: any): Observable<any>{
+    let json = JSON.stringify(persona);
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this.httpClient.put("/nacimientos/"+id, persona, {headers: headers});
+  }
 
 
 }
