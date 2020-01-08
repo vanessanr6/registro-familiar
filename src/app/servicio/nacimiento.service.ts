@@ -11,6 +11,11 @@ export class NacimientoService {
       
   }
 
+  ObtenerUnNacimientos(item):Observable<any>{
+    return this.httpClient.get("/nacimientos/"+ item);
+    
+}
+
   obtenerNacimientoNombres(busqueda: any):Observable<any>{
     console.log(busqueda.primer_nombre);
       return this.httpClient.get("/nacimientos/buscarNombres/"+ busqueda.primer_nombre + "/" + busqueda.segundo_nombre +"/" + busqueda.primer_apellido + "/" + busqueda.segundo_apellido);
@@ -26,5 +31,7 @@ export class NacimientoService {
   eliminarPersona(identificador): Observable<any>{
     return this.httpClient.delete("/nacimientos/" + identificador);
   }
+
+
 
 }
