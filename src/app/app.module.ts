@@ -25,11 +25,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdopcionComponent } from './adopcion/adopcion.component';
 import { AdopcionService } from './servicio/adopcion.service';
+import { MatrimonioListComponent } from './matrimonio/matrimonio-list/matrimonio-list.component';
+import { MatrimonioService } from './servicio/matrimonio.service';
+import { MatrimonioPostComponent } from './matrimonio/matrimonio-post/matrimonio-post.component';
 
 const routes: Routes = [
-  { path: '', component: BodyComponent },
   { path: 'nacimiento', component: NacimientoComponent },
-  { path: 'nacimientopost', component: NacimientoPostComponent }
+  { path: 'nacimientopost', component: NacimientoPostComponent },
+  { path: 'matrimonio', component: MatrimonioListComponent },
+  { path: 'matrimoniopost', component: MatrimonioPostComponent }
 ];
 
 
@@ -41,7 +45,9 @@ const routes: Routes = [
     BodyComponent,
     FooterComponent,
     NacimientoPostComponent,
-    AdopcionComponent
+    AdopcionComponent,
+    MatrimonioListComponent,
+    MatrimonioPostComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [{ provide: LOCALE_ID, useValue: 'es' }, NacimientoService],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }, 
+              NacimientoService,
+              MatrimonioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

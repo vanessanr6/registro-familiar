@@ -1,14 +1,15 @@
 {
+  "/matrimonios":{
+    "target": "http://localhost:3000",
+    "secure": false,
+    "changeOrigin" : true
+},   
     "/nacimientos":{
         "target": "http://localhost:3001",
         "secure": false,
         "changeOrigin" : true
     },
-    "/matrimonios":{
-        "target": "http://localhost:3000",
-        "secure": false,
-        "changeOrigin" : true
-    },   
+    
     "/adopciones":{
         "target": "http://localhost:3002",
         "secure": false,
