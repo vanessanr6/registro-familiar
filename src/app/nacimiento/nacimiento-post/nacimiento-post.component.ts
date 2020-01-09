@@ -17,35 +17,29 @@ export class NacimientoPostComponent implements OnInit {
   }
 
   agregarNacimiento(){
-    console.log("Evento guardar");
     this.NacimientoService.agregarNacimiento(this.agregarNacimientoRegistro).subscribe( resultado => {
-      console.log('correcto;');
       location.href = '/nacimiento';
     },
     error => {
-      alert('No se pudo agregar el registro');
+      alert('No se pudo agregar el registro, complete todos los campos');
     })
   }
 
   buscarPersonaMadre(){
-    console.log("Evento guardar");
     this.NacimientoService.obtenerNacimientoNombres(this.datosBusqueda).subscribe( resultado => {
       this.resultadoMadre = resultado;
-      console.log(this.resultadoMadre);
     },
     error => {
-      console.log(error);
+      alert('Persona No Encontrada');
     })
   }
 
   buscarPersonaPadre(){
-    console.log("Evento guardar");
     this.NacimientoService.obtenerNacimientoNombres(this.datosBusquedaPadre).subscribe( resultado => {
       this.resultadoPadre = resultado;
-      console.log(this.resultadoPadre);
     },
     error => {
-      console.log(error);
+      alert('Persona No Encontrada');
     })
   }
 

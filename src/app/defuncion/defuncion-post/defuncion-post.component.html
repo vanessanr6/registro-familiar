@@ -1,1 +1,124 @@
-<p>defuncion-post works!</p>
+<h1 class="text-center">Registro de Defuncion</h1>
+<br>
+<div class="row">
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Primer Nombre</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.primer_nombre" class="form-control "
+                placeholder="Primer nombre" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Segundo Nombre</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.segundo_nombre" class="form-control"
+                placeholder="Segundo nombre" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Primer Apellido</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.primer_apellido" class="form-control"
+                placeholder="Primer Apellido" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Segundo Apellido</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.segundo_apellido" class="form-control"
+                placeholder="Segundo Apellido" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Apellido de Casada</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.apellido_casada" class="form-control"
+                placeholder="Apellido de Casada" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Sexo</label>
+            <select [(ngModel)]="agregarDefuncionRegistro.sexo" class="form-control" required>
+                <option value="" disabled selected="true">Seleccione una de las opciones</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino" selected>Femenino</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Lugar de Fallecimiento</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.lugar_fallecimiento" class="form-control"
+                placeholder="Lugar de Fallecimiento" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Estado Civil</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.estado_civil" class="form-control"
+                placeholder="Estado Civil" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Fecha de Fallecimiento</label>
+            <input type="Date" [(ngModel)]="agregarDefuncionRegistro.fecha" class="form-control"
+                placeholder="Fecha de Fallecimiento" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Hora de Fallecimiento</label>
+            <input type="time" [(ngModel)]="agregarDefuncionRegistro.hora" class="form-control"
+                placeholder="Hora de Fallecimiento" step="2" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Edad</label>
+            <input type="number" [(ngModel)]="agregarDefuncionRegistro.edad" class="form-control"
+                placeholder="Edad del Fallecido" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Motivo de Fallecimiento</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.motivo" class="form-control"
+                placeholder="Motivo de Fallecimiento" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Nombre Forense</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.nombre_forense" class="form-control"
+                placeholder="Nombre de Forense" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">JVPM forense</label>
+            <input type="text" [(ngModel)]="agregarDefuncionRegistro.jvpm_forense" class="form-control"
+                placeholder="JVPM de Forense" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Libro</label>
+            <input type="number" [(ngModel)]="agregarDefuncionRegistro.libro" class="form-control"
+                placeholder="Digite numero de Libro" required>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-10">
+        <div class="form-group">
+            <label for="controlNombre">Folio</label>
+            <input type="number" [(ngModel)]="agregarDefuncionRegistro.folio" class="form-control"
+                placeholder="Digite Numero de Folio" required>
+        </div>
+    </div>
+</div>
+
+<!--***************** Boton Para guardar Nacimientos  ***************-->
+<div class="text-right">
+    <button (click)="agregarDefuncion()" class="btn btn-primary">Agregar Nacimiento</button>
+</div>

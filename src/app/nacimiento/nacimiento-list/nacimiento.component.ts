@@ -23,13 +23,11 @@ export class NacimientoComponent implements OnInit {
   }
 
   buscarRegistro() {
-    console.log("Evento guardar");
     this.NacimientoService.obtenerNacimientoNombres(this.datosBusquedaRegistro).subscribe(resultado => {
       this.resultadoNacimiento = resultado;
-      console.log(this.resultadoNacimiento);
     },
       error => {
-        console.log(error);
+        alert('Registro no Encontrado');
       })
   }
 
@@ -42,7 +40,6 @@ export class NacimientoComponent implements OnInit {
 
     this.NacimientoService.ObtenerUnNacimientos(item).subscribe(resultado => {
       this.resultadoParaImpresion = resultado
-      console.log(this.resultadoParaImpresion);
       formatDate(this.resultadoParaImpresion.fecha_nacimiento, 'long', 'es-SV')
       const doc = new jsPDF();
       doc.setFont("helvetica");
@@ -69,7 +66,7 @@ export class NacimientoComponent implements OnInit {
       doc.text(formatDate(new Date(), 'fullDate', 'es-SV'), 15, 120)
       doc.save(this.resultadoParaImpresion.primer_nombre + this.resultadoParaImpresion.segundo_nombre + this.resultadoParaImpresion.primer_apellido + this.resultadoParaImpresion.segundo_apellido + ".pdf");
     }, error => {
-      console.log(error);
+      alert("El Formato Digital no puede ser mostrado");
     })
   }
 
