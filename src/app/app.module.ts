@@ -25,15 +25,26 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdopcionComponent } from './adopcion/adopcion.component';
 import { AdopcionService } from './servicio/adopcion.service';
+
 import { DefuncionPostComponent } from './defuncion/defuncion-post/defuncion-post.component';
 import { DefuncionListComponent } from './defuncion/defuncion-list/defuncion-list.component';
 
+import { MatrimonioListComponent } from './matrimonio/matrimonio-list/matrimonio-list.component';
+import { MatrimonioService } from './servicio/matrimonio.service';
+import { MatrimonioPostComponent } from './matrimonio/matrimonio-post/matrimonio-post.component';
+import { DefuncionService } from './servicio/defuncion.service';
+
+
 const routes: Routes = [
-  { path: '', component: BodyComponent },
   { path: 'nacimiento', component: NacimientoComponent },
   { path: 'nacimientopost', component: NacimientoPostComponent },
+
   { path: 'defuncion', component: DefuncionListComponent },
-  { path: 'defuncionpost', component: DefuncionPostComponent }
+  { path: 'defuncionpost', component: DefuncionPostComponent },
+
+  { path: 'matrimonio', component: MatrimonioListComponent },
+  { path: 'matrimoniopost', component: MatrimonioPostComponent }
+
 ];
 
 
@@ -47,7 +58,9 @@ const routes: Routes = [
     NacimientoPostComponent,
     AdopcionComponent,
     DefuncionPostComponent,
-    DefuncionListComponent
+    DefuncionListComponent,
+    MatrimonioListComponent,
+    MatrimonioPostComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +70,13 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [{ provide: LOCALE_ID, useValue: 'es' }, NacimientoService, AdopcionService],
+
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }, 
+              NacimientoService,
+              MatrimonioService,
+              AdopcionService,
+              DefuncionService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
