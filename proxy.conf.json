@@ -19,5 +19,11 @@
         "target": "http://localhost:3003",
         "secure": false,
         "changeOrigin" : true
-    } 
+    },
+    "/divorcios":{
+        "target": "http://localhost:3010",
+        "secure": false,
+        "changeOrigin": true
+    }
+
 }
