@@ -1,0 +1,75 @@
+<div class="text-center">
+    <h1>Lista de Registro de Defunciones</h1>
+</div>
+<br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>Busqueda de Registro de Defuncion</h1>
+        </div>
+        <div class="col-md-3 col-sm-10">
+            <div class="form-group">
+                <label for="controlNombre">Primer Nombre</label>
+                <input type="text" [(ngModel)]="datosBusquedaDefuncion.primer_nombre" class="form-control "
+                    placeholder="Primer nombre" required>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-10">
+            <div class="form-group">
+                <label for="controlNombre">Segundo Nombre</label>
+                <input type="text" [(ngModel)]="datosBusquedaDefuncion.segundo_nombre" class="form-control"
+                    placeholder="Segundo nombre" required>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-10">
+            <div class="form-group">
+                <label for="controlNombre">Primer Apellido</label>
+                <input type="text" [(ngModel)]="datosBusquedaDefuncion.primer_apellido" class="form-control"
+                    placeholder="Primer Apellido" required>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-10">
+            <div class="form-group">
+                <label for="controlNombre">Segundo Apellido</label>
+                <input type="text" [(ngModel)]="datosBusquedaDefuncion.segundo_apellido" class="form-control"
+                    placeholder="Segundo Apellido" required>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="text-center">
+                <button (click)="buscarDefuncion()" class="btn btn-primary">Buscar Registro de Defuncion</button>
+            </div>
+            
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="row text-center">
+
+        <div class="col-12">
+           <table class="table table-dark">
+               <thead>
+                    <th>Primero Nombre</th>
+                    <th>Segundo Nombre</th>
+                    <th>Primero Apellido</th>
+                    <th>Segundo Apellido</th>
+                    <th>Fecha de Defuncion</th>
+                    <th>Acciones</th>
+               </thead>
+               <tbody>
+                    <tr *ngFor="let item of resultadoDefuncion">
+                        <td>{{ item.primer_nombre }}</td>
+                        <td>{{ item.segundo_nombre }}</td>
+                        <td>{{ item.primer_apellido }}</td>
+                        <td>{{ item.segundo_apellido }}</td>
+                        <td>{{ item.fecha | date:'fullDate'}}</td>
+                        <td><button (click)="downloadPDFDefuncion(item.id)" class="btn btn-primary">Ver formato Digital</button></td>
+                    </tr>
+               </tbody>
+           </table>
+        </div>
+        
+    </div>
+
+</div>
