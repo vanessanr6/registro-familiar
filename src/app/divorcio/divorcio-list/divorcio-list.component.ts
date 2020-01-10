@@ -24,7 +24,13 @@ export class DivorcioListComponent implements OnInit {
   obtenerDivorcios() {
     this.nacimientoService.obtenerNacimientoNombres(this.datosBusquedaRegistro).subscribe(resultado => {
       this.persona = resultado;
-     
+      this.divorcioService.obtenerDivorcioPorNombre(this.persona[0].primer_nombre, this.persona[0].segundo_nombre, this.persona[0].primer_apellido, this.persona[0].segundo_apellido).subscribe(
+        divorcio => {
+          this.divorcios = divorcio
+        }, error => {
+          console.log(error);
+        }
+      )
     },
       error  => {
         console.log(JSON.stringify(error));

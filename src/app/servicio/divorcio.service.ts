@@ -23,4 +23,8 @@ export class DivorcioService {
   obtenerUnDivorcio(item):Observable<any>{
     return this.httpClient.get("/divorcios/"+item);
   }
+
+  obtenerDivorcioPorNombre(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido):Observable<any>{
+    return this.httpClient.get("/divorcios/"+primer_nombre+"/"+segundo_nombre+"/"+primer_apellido+"/"+segundo_apellido);
+  }
 }
