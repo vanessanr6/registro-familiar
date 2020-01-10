@@ -20,4 +20,19 @@ export class MatrimonioService {
   obtenerMatrimonioPorNombre(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido):Observable<any>{
     return this.httpClient.get("/matrimonios/"+primer_nombre+"/"+segundo_nombre+"/"+primer_apellido+"/"+segundo_apellido);
   }
+
+  obtenerUnMatrimonio(item):Observable<any>{
+    return this.httpClient.get("/matrimonios/"+item);
+  }
+
+  obtenerMatrimonioPorEsposos(nombre1Esposo, nombre2Esposo, apellido1Esposo, apellido2Esposo, nombre1Esposa, nombre2Esposa, apellido1Esposa, apellido2Esposa):Observable<any>{
+    return this.httpClient.get("/matrimonios/"+nombre1Esposo+"/"+nombre2Esposo+"/"+apellido1Esposo+"/"+apellido2Esposo+"/"+nombre1Esposa+"/"+nombre2Esposa+"/"+apellido1Esposa+"/"+apellido2Esposa);
+  }
+
+  actualizarMatrimonio(id: any, matrimonio: any): Observable<any> {
+    let json = JSON.stringify(matrimonio)
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this.httpClient.put("/matrimonios/"+id, json, {headers: headers});
+  }
+
 }

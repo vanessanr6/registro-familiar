@@ -23,7 +23,7 @@ export class NacimientoComponent implements OnInit {
     this.NacimientoService.obtenerNacimientoNombres(this.datosBusquedaRegistro).subscribe( resultado => {
       this.resultadoNacimiento = resultado;
       console.log(this.resultadoNacimiento);
-    },
+    }, 
     error => {
       console.log(error);
     })

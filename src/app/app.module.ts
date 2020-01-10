@@ -28,12 +28,16 @@ import { AdopcionService } from './servicio/adopcion.service';
 import { MatrimonioListComponent } from './matrimonio/matrimonio-list/matrimonio-list.component';
 import { MatrimonioService } from './servicio/matrimonio.service';
 import { MatrimonioPostComponent } from './matrimonio/matrimonio-post/matrimonio-post.component';
+import { DivorcioListComponent } from './divorcio/divorcio-list/divorcio-list.component';
+import { DivorcioPostComponent } from './divorcio/divorcio-post/divorcio-post.component';
 
 const routes: Routes = [
   { path: 'nacimiento', component: NacimientoComponent },
   { path: 'nacimientopost', component: NacimientoPostComponent },
   { path: 'matrimonio', component: MatrimonioListComponent },
-  { path: 'matrimoniopost', component: MatrimonioPostComponent }
+  { path: 'matrimoniopost', component: MatrimonioPostComponent },
+  { path: 'divorcio', component: DivorcioListComponent},
+  { path: 'divorciopost', component: DivorcioPostComponent}
 ];
 
 
@@ -47,7 +51,9 @@ const routes: Routes = [
     NacimientoPostComponent,
     AdopcionComponent,
     MatrimonioListComponent,
-    MatrimonioPostComponent
+    MatrimonioPostComponent,
+    DivorcioListComponent,
+    DivorcioPostComponent
   ],
   imports: [
     BrowserModule,

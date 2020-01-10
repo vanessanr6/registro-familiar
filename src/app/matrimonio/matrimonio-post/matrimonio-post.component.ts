@@ -11,7 +11,7 @@ export class MatrimonioPostComponent implements OnInit {
 
   esposa: any;
   esposo: any;
-  agregarMatrimonioRegistro: any = { nombre1Esposo: '', nombre2Esposo: '', apellido1Esposo: '', apellido2Esposo: '', nombre1Esposa: '', nombre2Esposa: '', apellido1Esposa: '', apellido2Esposa: '', fecha: '', idEsposo: '', idEsposa: '', libro: '', folio: '', departamento: '', vigente: true}
+  agregarMatrimonioRegistro: any = { nombre1Esposo: '', nombre2Esposo: '', apellido1Esposo: '', apellido2Esposo: '', nombre1Esposa: '', nombre2Esposa: '', apellido1Esposa: '', apellido2Esposa: '', fecha: '', idEsposo: '', idEsposa: '', libro: '', folio: '', departamento: '', vigente: true, nombre1Testigo1: '', nombre2Testigo1:'', apellido1Testigo1:'', apellido2Testigo1: '', nombre1Testigo2: '', nombre2Testigo2:'', apellido1Testigo2:'', apellido2Testigo2: '', nombre1Notario: '', nombre2Notario:'', apellido1Notario:'', apellido2Notario:''}
 
   constructor(private matrimonioService: MatrimonioService, private nacimientoService: NacimientoService) { }
 
@@ -40,7 +40,8 @@ export class MatrimonioPostComponent implements OnInit {
             this.nacimientoService.obtenerPersona(matrimonio.nombre1Esposo, matrimonio.nombre2Esposo, matrimonio.apellido1Esposo, matrimonio.apellido2Esposo).subscribe(
               resultado => {
                 this.esposo = resultado;
-    
+                console.log(this.esposo);
+                
                 const datosEsposo = {
                   'id': this.esposo[0].id,
                   'primer_nombre': this.esposo[0].primer_nombre,
@@ -51,7 +52,9 @@ export class MatrimonioPostComponent implements OnInit {
                 }
                 console.log(datosEsposo);
                 this.nacimientoService.actualizarPersona(datosEsposo, this.esposo[0].id).subscribe(
-                  resultado => {},
+                  resultado => {
+                   location.href = '/matrimonio';
+                  },
                   error => {
                     console.log(error);
                   }
@@ -65,7 +68,6 @@ export class MatrimonioPostComponent implements OnInit {
           })
         }
       );
-      location.href = '/matrimonio';
     },
       error => {
         console.log(error);
