@@ -1,8 +1,7 @@
 <div class="text-center">
-    <h1>Lista de Registro de Nacimientos</h1>
+    <h1>Registro de Nacimientos</h1>
 </div>
 <br>
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 text-center">
@@ -40,36 +39,32 @@
             <div class="text-center">
                 <button (click)="buscarRegistro()" class="btn btn-primary">Buscar Persona</button>
             </div>
-            
         </div>
     </div>
     <br>
     <hr>
     <div class="row text-center">
-
         <div class="col-12">
-           <table class="table table-dark">
-               <thead>
+            <table class="table table-dark">
+                <thead>
                     <th>Primero Nombre</th>
                     <th>Segundo Nombre</th>
                     <th>Primero Apellido</th>
                     <th>Segundo Apellido</th>
                     <th>Fecha de Nacimiento</th>
                     <th>Acciones</th>
-               </thead>
-               <tbody>
+                </thead>
+                <tbody>
                     <tr *ngFor="let item of resultadoNacimiento">
                         <td>{{ item.primer_nombre }}</td>
                         <td>{{ item.segundo_nombre }}</td>
                         <td>{{ item.primer_apellido }}</td>
                         <td>{{ item.segundo_apellido }}</td>
                         <td>{{ item.fecha_nacimiento | date:'fullDate'}}</td>
-                        <td><button (click)="downloadPDF(item.id)" class="btn btn-primary">Ver formato Digital</button></td>
+                        <td><a href="defuncionpost" class="btn btn-primary">Registrar Defuncion</a></td>
                     </tr>
-               </tbody>
-           </table>
+                </tbody>
+            </table>
         </div>
-        
     </div>
-
 </div>

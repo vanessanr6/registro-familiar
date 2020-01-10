@@ -25,15 +25,29 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdopcionComponent } from './adopcion/adopcion.component';
 import { AdopcionService } from './servicio/adopcion.service';
+
+import { DefuncionPostComponent } from './defuncion/defuncion-post/defuncion-post.component';
+import { DefuncionListComponent } from './defuncion/defuncion-list/defuncion-list.component';
+
 import { MatrimonioListComponent } from './matrimonio/matrimonio-list/matrimonio-list.component';
 import { MatrimonioService } from './servicio/matrimonio.service';
 import { MatrimonioPostComponent } from './matrimonio/matrimonio-post/matrimonio-post.component';
+
+import { DefuncionService } from './servicio/defuncion.service';
+import { NacimientoDefuncionComponent } from './defuncion/nacimiento-defuncion/nacimiento-defuncion.component';
+
 import { DivorcioListComponent } from './divorcio/divorcio-list/divorcio-list.component';
 import { DivorcioPostComponent } from './divorcio/divorcio-post/divorcio-post.component';
+
 
 const routes: Routes = [
   { path: 'nacimiento', component: NacimientoComponent },
   { path: 'nacimientopost', component: NacimientoPostComponent },
+
+  { path: 'defuncion', component: DefuncionListComponent },
+  { path: 'buscandoRegistros', component: NacimientoDefuncionComponent },
+  { path: 'defuncionpost', component: DefuncionPostComponent },
+
   { path: 'matrimonio', component: MatrimonioListComponent },
   { path: 'matrimoniopost', component: MatrimonioPostComponent },
   { path: 'divorcio', component: DivorcioListComponent},
@@ -50,8 +64,11 @@ const routes: Routes = [
     FooterComponent,
     NacimientoPostComponent,
     AdopcionComponent,
+    DefuncionPostComponent,
+    DefuncionListComponent,
     MatrimonioListComponent,
     MatrimonioPostComponent,
+    NacimientoDefuncionComponent,
     DivorcioListComponent,
     DivorcioPostComponent
   ],
@@ -63,9 +80,14 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
+
   providers: [{ provide: LOCALE_ID, useValue: 'es' }, 
               NacimientoService,
-              MatrimonioService],
+              MatrimonioService,
+              AdopcionService,
+              DefuncionService,
+              NacimientoDefuncionComponent],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

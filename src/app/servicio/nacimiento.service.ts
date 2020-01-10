@@ -17,7 +17,6 @@ export class NacimientoService {
 }
 
   obtenerNacimientoNombres(busqueda: any):Observable<any>{
-    console.log(busqueda.primer_nombre);
       return this.httpClient.get("/nacimientos/buscarNombres/"+ busqueda.primer_nombre + "/" + busqueda.segundo_nombre +"/" + busqueda.primer_apellido + "/" + busqueda.segundo_apellido);
   }
 
