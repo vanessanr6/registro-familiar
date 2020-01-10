@@ -24,7 +24,7 @@ export class MatrimonioPostComponent implements OnInit {
     this.matrimonioService.agregarMatrimonio(matrimonio).subscribe( result => {
       this.nacimientoService.obtenerPersona(matrimonio.nombre1Esposa, matrimonio.nombre2Esposa, matrimonio.apellido1Esposa, matrimonio.apellido2Esposa).subscribe(
         resultado =>  {
-          this.esposa = resultado;
+          this.esposa = resultado; 
           
           const datosEsposa = {
             'id': this.esposa[0].id,
@@ -33,7 +33,16 @@ export class MatrimonioPostComponent implements OnInit {
             'primer_apellido': this.esposa[0].primer_apellido,
             'segundo_apellido': this.esposa[0].segundo_apellido,
             'apellido_casada': matrimonio.apellido_casada,
-            'estado_civil': 'Casada'
+            'estado_civil': 'Casada',
+            'dui': this.esposa[0].dui,
+                  'lugar_nacimiento': this.esposa[0].lugar_nacimiento,
+                  'mayoria_edad': this.esposa[0].mayoria_edad,
+                  'padre': this.esposa[0].padre,
+                  'madre': this.esposa[0].madre,
+                  'hora': this.esposa[0].hora,
+                  'fecha_nacimiento': this.esposa[0].fecha_nacimiento,
+                  'hospital': this.esposa[0].hospital,
+                  'sexo': this.esposa[0].sexo,
           }
           
           this.nacimientoService.actualizarPersona(datosEsposa, this.esposa[0].id).subscribe( resultado => {
@@ -48,6 +57,15 @@ export class MatrimonioPostComponent implements OnInit {
                   'segundo_nombre': this.esposo[0].segundo_nombre, 
                   'primer_apellido': this.esposo[0].primer_apellido,
                   'segundo_apellido': this.esposo[0].segundo_apellido,
+                  'dui': this.esposo[0].dui,
+                  'lugar_nacimiento': this.esposo[0].lugar_nacimiento,
+                  'mayoria_edad': this.esposo[0].mayoria_edad,
+                  'padre': this.esposo[0].padre,
+                  'madre': this.esposo[0].madre,
+                  'hora': this.esposo[0].hora,
+                  'fecha_nacimiento': this.esposo[0].fecha_nacimiento,
+                  'hospital': this.esposo[0].hospital,
+                  'sexo': this.esposo[0].sexo,
                   'estado_civil': 'Casado'
                 }
                 console.log(datosEsposo);
