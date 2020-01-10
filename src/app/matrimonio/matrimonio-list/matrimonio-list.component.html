@@ -53,6 +53,7 @@
                   <th>Folio</th>
                   <th>Libro</th>
                   <th>Vigente</th>
+                  <th></th>
              </thead>
              <tbody>
                   <tr *ngFor="let item of matrimonios">
@@ -63,6 +64,7 @@
                       <td>{{ item.folio}} </td>
                       <td>{{ item.libro}} </td>
                       <td>{{ item.vigente}} </td>
+                      <td><button (click)="downloadPDF(item.id)" class="btn btn-primary">Ver formato Digital</button></td>
                   </tr>
              </tbody>
          </table>

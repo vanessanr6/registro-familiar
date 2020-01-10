@@ -32,8 +32,12 @@ import { DefuncionListComponent } from './defuncion/defuncion-list/defuncion-lis
 import { MatrimonioListComponent } from './matrimonio/matrimonio-list/matrimonio-list.component';
 import { MatrimonioService } from './servicio/matrimonio.service';
 import { MatrimonioPostComponent } from './matrimonio/matrimonio-post/matrimonio-post.component';
+
 import { DefuncionService } from './servicio/defuncion.service';
 import { NacimientoDefuncionComponent } from './defuncion/nacimiento-defuncion/nacimiento-defuncion.component';
+
+import { DivorcioListComponent } from './divorcio/divorcio-list/divorcio-list.component';
+import { DivorcioPostComponent } from './divorcio/divorcio-post/divorcio-post.component';
 
 
 const routes: Routes = [
@@ -45,8 +49,9 @@ const routes: Routes = [
   { path: 'defuncionpost', component: DefuncionPostComponent },
 
   { path: 'matrimonio', component: MatrimonioListComponent },
-  { path: 'matrimoniopost', component: MatrimonioPostComponent }
-
+  { path: 'matrimoniopost', component: MatrimonioPostComponent },
+  { path: 'divorcio', component: DivorcioListComponent},
+  { path: 'divorciopost', component: DivorcioPostComponent}
 ];
 
 
@@ -63,7 +68,9 @@ const routes: Routes = [
     DefuncionListComponent,
     MatrimonioListComponent,
     MatrimonioPostComponent,
-    NacimientoDefuncionComponent
+    NacimientoDefuncionComponent,
+    DivorcioListComponent,
+    DivorcioPostComponent
   ],
   imports: [
     BrowserModule,
