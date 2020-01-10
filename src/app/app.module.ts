@@ -33,6 +33,7 @@ import { MatrimonioListComponent } from './matrimonio/matrimonio-list/matrimonio
 import { MatrimonioService } from './servicio/matrimonio.service';
 import { MatrimonioPostComponent } from './matrimonio/matrimonio-post/matrimonio-post.component';
 import { DefuncionService } from './servicio/defuncion.service';
+import { NacimientoDefuncionComponent } from './defuncion/nacimiento-defuncion/nacimiento-defuncion.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'nacimientopost', component: NacimientoPostComponent },
 
   { path: 'defuncion', component: DefuncionListComponent },
+  { path: 'buscandoRegistros', component: NacimientoDefuncionComponent },
   { path: 'defuncionpost', component: DefuncionPostComponent },
 
   { path: 'matrimonio', component: MatrimonioListComponent },
@@ -60,7 +62,8 @@ const routes: Routes = [
     DefuncionPostComponent,
     DefuncionListComponent,
     MatrimonioListComponent,
-    MatrimonioPostComponent
+    MatrimonioPostComponent,
+    NacimientoDefuncionComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,8 @@ const routes: Routes = [
               NacimientoService,
               MatrimonioService,
               AdopcionService,
-              DefuncionService],
+              DefuncionService,
+              NacimientoDefuncionComponent],
 
   bootstrap: [AppComponent]
 })

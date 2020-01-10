@@ -24,7 +24,7 @@ export class DefuncionListComponent implements OnInit {
       this.resultadoDefuncion = resultado;
     },
       error => {
-        alert("Dufuncion no encontrada");
+        alert("Defuncion no encontrada");
       })
   }
 
